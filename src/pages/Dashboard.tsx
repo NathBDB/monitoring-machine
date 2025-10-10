@@ -33,8 +33,8 @@ const AppBar = styled(MuiAppBar, {
     {
       props: ({ open }) => open,
       style: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: `${drawerWidth}px`,
+       // width: `calc(100% - ${drawerWidth})`,
+       // marginLeft: `${drawerWidth}`,
         transition: theme.transitions.create(['margin', 'width'], {
           easing: theme.transitions.easing.easeOut,
           duration: theme.transitions.duration.enteringScreen,
@@ -53,32 +53,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
-  open?: boolean;
-}>(({ theme }) => ({
+const Main = styled('main')<{}>(({ theme }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginLeft: 0,
-  variants: [
-    {
-      props: ({ open }) => open,
-      style: {
-        transition: theme.transitions.create('margin', {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: `${drawerWidth}`,
-      },
-    },
-  ],
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   minHeight: '100vh',
+
 }));
 
 const allMachines = sitesData.flatMap(site =>
@@ -214,7 +196,7 @@ export default function Dashboard() {
 
       </Drawer>
       
-      <Main open={open}>
+      <Main>
         <DrawerHeader />
         <Typography variant="h4" component="h1" sx={{ mb: 4, mt: 2, textAlign: 'center' }}>
           Liste des machines
