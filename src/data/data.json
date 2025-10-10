@@ -1,0 +1,161 @@
+[
+  {
+    "id": 1,
+    "name": "Usine de Montréal",
+    "location": "Montréal, QC",
+    "departments": [
+      {
+        "id": 101,
+        "name": "Production",
+        "manager": "Sophie Tremblay",
+        "machines": [
+          {
+            "id": 1001,
+            "name": "Presse hydraulique 01",
+            "status": "En marche",
+            "temperature": 72,
+            "uptime_hours": 4200,
+            "last_maintenance": "2025-09-15"
+          },
+          {
+            "id": 1002,
+            "name": "Robot soudure 02",
+            "status": "En panne",
+            "temperature": null,
+            "uptime_hours": 2100,
+            "last_maintenance": "2025-07-22"
+          },
+          {
+            "id": 1003,
+            "name": "Convoyeur principal",
+            "status": "En veille",
+            "temperature": 25,
+            "uptime_hours": 1580,
+            "last_maintenance": "2025-10-01"
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Maintenance",
+        "manager": "Luc Beaulieu",
+        "machines": [
+          {
+            "id": 1004,
+            "name": "Compresseur d'air 01",
+            "status": "En marche",
+            "temperature": 63,
+            "uptime_hours": 6200,
+            "last_maintenance": "2025-08-12"
+          },
+          {
+            "id": 1005,
+            "name": "Pompe hydraulique 03",
+            "status": "En veille",
+            "temperature": 30,
+            "uptime_hours": 3400,
+            "last_maintenance": "2025-09-28"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Usine de Toronto",
+    "location": "Toronto, ON",
+    "departments": [
+      {
+        "id": 201,
+        "name": "Assemblage",
+        "manager": "Emma Dubois",
+        "machines": [
+          {
+            "id": 2001,
+            "name": "Tour CNC 01",
+            "status": "En marche",
+            "temperature": 68,
+            "uptime_hours": 8100,
+            "last_maintenance": "2025-09-19"
+          },
+          {
+            "id": 2002,
+            "name": "Bras robotisé 04",
+            "status": "En marche",
+            "temperature": 74,
+            "uptime_hours": 5100,
+            "last_maintenance": "2025-08-30"
+          }
+        ]
+      },
+      {
+        "id": 202,
+        "name": "Qualité",
+        "manager": "Alex Nguyen",
+        "machines": [
+          {
+            "id": 2003,
+            "name": "Scanner laser 02",
+            "status": "En marche",
+            "temperature": 50,
+            "uptime_hours": 1900,
+            "last_maintenance": "2025-09-10"
+          },
+          {
+            "id": 2004,
+            "name": "Caméra thermique 01",
+            "status": "En panne",
+            "temperature": null,
+            "uptime_hours": 1300,
+            "last_maintenance": "2025-07-11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Usine de Québec",
+    "location": "Québec, QC",
+    "departments": [
+      {
+        "id": 301,
+        "name": "Emballage",
+        "manager": "Patrick Gagnon",
+        "machines": [
+          {
+            "id": 3001,
+            "name": "Machine à emballer 01",
+            "status": "En marche",
+            "temperature": 61,
+            "uptime_hours": 7100,
+            "last_maintenance": "2025-09-20"
+          },
+          {
+            "id": 3002,
+            "name": "Étiqueteuse 02",
+            "status": "En veille",
+            "temperature": 28,
+            "uptime_hours": 2400,
+            "last_maintenance": "2025-10-02"
+          }
+        ]
+      },
+      {
+        "id": 302,
+        "name": "Logistique",
+        "manager": "Nadia Lefebvre",
+        "machines": [
+          {
+            "id": 3003,
+            "name": "Chariot autonome 01",
+            "status": "En marche",
+            "temperature": 35,
+            "uptime_hours": 520,
+            "last_maintenance": "2025-09-30"
+          }
+        ]
+      }
+    ]
+  }
+]
