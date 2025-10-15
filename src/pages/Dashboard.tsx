@@ -3,46 +3,21 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar, { type AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import FilterListIcon from '@mui/icons-material/FilterList';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import FilterComboBox from '../components/FilterComboBox';
 import sitesData from '../data/data.json';
 import MachineTable from '../components/MachineTable';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
+import MachineSearchBar from '../components/MachineSearchBar';
+import { Paper } from '@mui/material';
 const drawerWidth = '25%';
 
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean;
-}
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  variants: [
-    {
-      props: ({ open }) => open,
-      style: {
-       // width: `calc(100% - ${drawerWidth})`,
-       // marginLeft: `${drawerWidth}`,
-        transition: theme.transitions.create(['margin', 'width'], {
-          easing: theme.transitions.easing.easeOut,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-      },
-    },
-  ],
-}));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -54,12 +29,12 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const Main = styled('main')<{}>(({ theme }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  minHeight: '100vh',
+//  flexGrow: 1,
+//   padding: theme.spacing(3),
+//   display: 'flex',
+//   flexDirection: 'column',
+//   alignItems: 'center',
+   minHeight: '100vh',
 
 }));
 
@@ -74,12 +49,13 @@ const allMachines = sitesData.flatMap(site =>
 );
 
 export default function Dashboard() {
-  const theme = useTheme();
+ 
   const [open, setOpen] = React.useState(false);
   
   const [selectedSites, setSelectedSites] = useState<{id:number | string, name:string}[]>([]);
   const [selectedDepartments, setSelectedDepartments] = useState<{id:number | string, name:string}[]>([]);
   const [selectedStates, setSelectedStates] = useState<{id:number | string, name:string}[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>('');
   
   const handleDrawerOpen = () => {setOpen(true);};
   const handleDrawerClose = () => {setOpen(false);};
@@ -120,34 +96,18 @@ export default function Dashboard() {
     return availableStates.map((status) => ({ id: status, name: status }));
   }, [selectedSites, selectedDepartments]);
 
+
   const filteredMachines = allMachines.filter(machine => {
     const siteMatch = selectedSites.length === 0 || selectedSites.some(site => site.name === machine.site);
     const departmentMatch = selectedDepartments.length === 0 || selectedDepartments.some(dept => dept.name === machine.department);
     const stateMatch = selectedStates.length === 0 || selectedStates.some(state => state.name === machine.status);
-    return siteMatch && departmentMatch && stateMatch; });
+    const searchMatch = searchTerm === '' || machine.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return siteMatch && departmentMatch && stateMatch && searchMatch;
+  });
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box >
       <CssBaseline />
-
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={[{mr: 2,},
-              open && { display: 'none' },
-            ]}
-          >
-            <FilterListIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Filtres
-          </Typography>
-        </Toolbar>
-      </AppBar>
 
       <Drawer
         sx={{
@@ -158,17 +118,19 @@ export default function Dashboard() {
             boxSizing: 'border-box',
           },
         }}
-        variant="persistent"
-        anchor="left"
+        variant="temporary"
+        anchor="right"
         open={open}
+        onClose={handleDrawerClose}
       >
         <DrawerHeader>
+
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronRightIcon /> 
+          </IconButton>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Filtres
           </Typography>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
         </DrawerHeader>
 
         <Divider />
@@ -197,10 +159,33 @@ export default function Dashboard() {
       </Drawer>
       
       <Main>
-        <DrawerHeader />
-        <Typography variant="h4" component="h1" sx={{ mb: 4, mt: 2, textAlign: 'center' }}>
-          Liste des machines
-        </Typography>
+        <Box sx={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          mb: 3,
+          mt:3,
+   
+          justifyContent: 'space-between'
+        }}>  
+          <Typography sx={{ textAlign: 'left', fontSize: '1.5rem'}}>
+            Liste des machines 
+          </Typography>
+          
+          <Box sx={{ display: 'flex', alignItems: 'stretch', gap: 2 }}>
+            <MachineSearchBar machines={filteredMachines} setSearchTerm={setSearchTerm} />  
+            <Button 
+              variant="outlined" 
+              color="inherit" 
+              startIcon={<FilterListIcon />} 
+              onClick={handleDrawerOpen}
+              sx={{ height: '45px', minWidth: '130px' }}
+            > 
+              Filtrer
+            </Button>
+          </Box>
+
+        </Box>
+       
         <MachineTable machines={filteredMachines} />
       </Main>
       

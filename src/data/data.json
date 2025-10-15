@@ -67,7 +67,7 @@
     "departments": [
       {
         "id": 201,
-        "name": "Assemblage",
+        "name": "Production",
         "manager": "Emma Dubois",
         "machines": [
           {
