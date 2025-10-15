@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,7 +14,7 @@ import MachineTable from '../components/MachineTable';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import MachineSearchBar from '../components/MachineSearchBar';
-import { Paper } from '@mui/material';
+
 const drawerWidth = '25%';
 
 
@@ -28,7 +28,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-const Main = styled('main')<{}>(({ theme }) => ({
+const Main = styled('main')<{}>(() => ({
 //  flexGrow: 1,
 //   padding: theme.spacing(3),
 //   display: 'flex',
@@ -172,7 +172,7 @@ export default function Dashboard() {
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'stretch', gap: 2 }}>
-            <MachineSearchBar machines={filteredMachines} setSearchTerm={setSearchTerm} />  
+            <MachineSearchBar setSearchTerm={setSearchTerm} />  
             <Button 
               variant="outlined" 
               color="inherit" 

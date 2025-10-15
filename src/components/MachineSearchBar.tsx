@@ -3,23 +3,14 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
-type Machine = {
-  id: number;
-  name: string;
-  status: string;
-  temperature: number | null;
-  uptime_hours: number;
-  last_maintenance: string;
-  department: string;
-  site: string;
-};
+
 
 type Props = {
-  machines: Machine[];
+ 
   setSearchTerm: (term: string) => void;
 };
 
-export default function MachineSearchBar({ machines, setSearchTerm }: Props) {
+export default function MachineSearchBar({  setSearchTerm }: Props) {
   return (
     <Box
       component="form"
