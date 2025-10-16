@@ -39,17 +39,24 @@ export default function MachineTable({ machines }: Props) {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer 
+      component={Paper} 
+      sx={{ 
+        maxHeight: "100%", 
+        overflow: "auto",
+ 
+      }}
+    >
+      <Table stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold' }}>Nom machine</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Site</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Département</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Température (°C)</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Heures de fonctionnement</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Dernière maintenance</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>État</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Nom machine</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Site</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Département</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Température (°C)</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Heures de fonctionnement</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>Dernière maintenance</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', backgroundColor: '#ffffff' }}>État</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

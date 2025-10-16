@@ -22,7 +22,8 @@ export default function MachineSearchBar({  setSearchTerm }: Props) {
         border: 1, 
         borderRadius: 1,
         height: '45px',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        backgroundColor: '#ffffff'
       }}
     >
       <InputBase

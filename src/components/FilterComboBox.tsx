@@ -5,15 +5,12 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-type Option = {
-  id: number | string;
-  name: string;
-};
+
 
 type Props = {
-  options: Option[];
-  selectedValues: Option[];
-  setSelectedValues: (values: Option[]) => void;
+  options: string[];
+  selectedValues: string[];
+  setSelectedValues: (values: string[]) => void;
   label: string;
 };
 
@@ -23,8 +20,8 @@ export default function FilterComboBox({ options, selectedValues, setSelectedVal
       multiple
       options={options}
       disableCloseOnSelect
-      getOptionLabel={(option) => option.name}
-      isOptionEqualToValue={(option, value) => option.id === value.id}
+      getOptionLabel={(option) => option}
+      isOptionEqualToValue={(option, value) => option === value}
       value={selectedValues}
       onChange={(_, newValue) => setSelectedValues(newValue)}
       renderOption={(props, option, { selected }) => (
@@ -35,7 +32,7 @@ export default function FilterComboBox({ options, selectedValues, setSelectedVal
             style={{ marginRight: 8 }}
             checked={selected}
           />
-          {option.name}
+          {option}
         </li>
       )}
       renderInput={(params) => <TextField {...params} label={label} />}

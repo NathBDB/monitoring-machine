@@ -32,6 +32,14 @@
             "temperature": 25,
             "uptime_hours": 1580,
             "last_maintenance": "2025-10-01"
+          },
+          {
+            "id": 1006,
+            "name": "Four industriel 01",
+            "status": "En marche",
+            "temperature": 95,
+            "uptime_hours": 6800,
+            "last_maintenance": "2025-09-05"
           }
         ]
       },
@@ -55,6 +63,14 @@
             "temperature": 30,
             "uptime_hours": 3400,
             "last_maintenance": "2025-09-28"
+          },
+          {
+            "id": 1007,
+            "name": "Génératrice de secours 02",
+            "status": "En marche",
+            "temperature": 56,
+            "uptime_hours": 2900,
+            "last_maintenance": "2025-10-03"
           }
         ]
       }
@@ -85,6 +101,14 @@
             "temperature": 74,
             "uptime_hours": 5100,
             "last_maintenance": "2025-08-30"
+          },
+          {
+            "id": 2005,
+            "name": "Presse pneumatique 02",
+            "status": "En veille",
+            "temperature": 29,
+            "uptime_hours": 2300,
+            "last_maintenance": "2025-09-25"
           }
         ]
       },
@@ -108,6 +132,14 @@
             "temperature": null,
             "uptime_hours": 1300,
             "last_maintenance": "2025-07-11"
+          },
+          {
+            "id": 2006,
+            "name": "Analyseur optique 03",
+            "status": "En marche",
+            "temperature": 48,
+            "uptime_hours": 2450,
+            "last_maintenance": "2025-09-22"
           }
         ]
       }
@@ -138,6 +170,14 @@
             "temperature": 28,
             "uptime_hours": 2400,
             "last_maintenance": "2025-10-02"
+          },
+          {
+            "id": 3004,
+            "name": "Balance automatisée 01",
+            "status": "En marche",
+            "temperature": 37,
+            "uptime_hours": 3800,
+            "last_maintenance": "2025-09-26"
           }
         ]
       },
@@ -153,6 +193,189 @@
             "temperature": 35,
             "uptime_hours": 520,
             "last_maintenance": "2025-09-30"
+          },
+          {
+            "id": 3005,
+            "name": "Robot de tri 02",
+            "status": "En marche",
+            "temperature": 46,
+            "uptime_hours": 960,
+            "last_maintenance": "2025-09-28"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Usine d'Ottawa",
+    "location": "Ottawa, ON",
+    "departments": [
+      {
+        "id": 401,
+        "name": "Assemblage",
+        "manager": "Julie Fortin",
+        "machines": [
+          {
+            "id": 4001,
+            "name": "Bras robotisé 05",
+            "status": "En marche",
+            "temperature": 70,
+            "uptime_hours": 4500,
+            "last_maintenance": "2025-09-12"
+          },
+          {
+            "id": 4002,
+            "name": "Tournevis automatique 02",
+            "status": "En veille",
+            "temperature": 22,
+            "uptime_hours": 1900,
+            "last_maintenance": "2025-09-25"
+          },
+          {
+            "id": 4003,
+            "name": "Table de montage 03",
+            "status": "En marche",
+            "temperature": 55,
+            "uptime_hours": 3100,
+            "last_maintenance": "2025-09-14"
+          }
+        ]
+      },
+      {
+        "id": 402,
+        "name": "Contrôle qualité",
+        "manager": "Louis Bertrand",
+        "machines": [
+          {
+            "id": 4004,
+            "name": "Scanner 3D 01",
+            "status": "En marche",
+            "temperature": 44,
+            "uptime_hours": 2500,
+            "last_maintenance": "2025-09-21"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Usine de Sherbrooke",
+    "location": "Sherbrooke, QC",
+    "departments": [
+      {
+        "id": 501,
+        "name": "Production",
+        "manager": "Mélanie Côté",
+        "machines": [
+          {
+            "id": 5001,
+            "name": "Robot de découpe 01",
+            "status": "En marche",
+            "temperature": 77,
+            "uptime_hours": 5300,
+            "last_maintenance": "2025-09-10"
+          },
+          {
+            "id": 5002,
+            "name": "Four de séchage 02",
+            "status": "En veille",
+            "temperature": 32,
+            "uptime_hours": 2600,
+            "last_maintenance": "2025-09-30"
+          },
+          {
+            "id": 5003,
+            "name": "Presse à vide 01",
+            "status": "En marche",
+            "temperature": 69,
+            "uptime_hours": 4200,
+            "last_maintenance": "2025-08-22"
+          }
+        ]
+      },
+      {
+        "id": 502,
+        "name": "Emballage",
+        "manager": "Pascal Morin",
+        "machines": [
+          {
+            "id": 5004,
+            "name": "Scelleuse 01",
+            "status": "En marche",
+            "temperature": 54,
+            "uptime_hours": 2100,
+            "last_maintenance": "2025-09-27"
+          },
+          {
+            "id": 5005,
+            "name": "Robot palettiseur 02",
+            "status": "En panne",
+            "temperature": null,
+            "uptime_hours": 1600,
+            "last_maintenance": "2025-07-29"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Usine de Vancouver",
+    "location": "Vancouver, BC",
+    "departments": [
+      {
+        "id": 601,
+        "name": "Production",
+        "manager": "Isabelle Roy",
+        "machines": [
+          {
+            "id": 6001,
+            "name": "Imprimante 3D industrielle 01",
+            "status": "En marche",
+            "temperature": 80,
+            "uptime_hours": 4100,
+            "last_maintenance": "2025-10-05"
+          },
+          {
+            "id": 6002,
+            "name": "Robot d’assemblage 02",
+            "status": "En veille",
+            "temperature": 26,
+            "uptime_hours": 3100,
+            "last_maintenance": "2025-09-22"
+          },
+          {
+            "id": 6003,
+            "name": "Presse à injection 03",
+            "status": "En marche",
+            "temperature": 90,
+            "uptime_hours": 7400,
+            "last_maintenance": "2025-09-14"
+          }
+        ]
+      },
+      {
+        "id": 602,
+        "name": "Maintenance",
+        "manager": "David Chan",
+        "machines": [
+          {
+            "id": 6004,
+            "name": "Compresseur d’air 04",
+            "status": "En veille",
+            "temperature": 34,
+            "uptime_hours": 1900,
+            "last_maintenance": "2025-09-18"
+          },
+          {
+            "id": 6005,
+            "name": "Système de ventilation 01",
+            "status": "En marche",
+            "temperature": 45,
+            "uptime_hours": 2500,
+            "last_maintenance": "2025-09-26"
           }
         ]
       }
