@@ -69,7 +69,7 @@ export default function NavigationDrawer({
 
       <List>
         <Divider sx={{ borderBottomWidth: 2 }} />
-        {sitesData.map((site, index) => (
+        {sitesData.map((site) => (
           <React.Fragment key={site.id}>
             <ListItemButton onClick={() => toggleSite(site.name)}>
               {selectedSites === site.name ? <ExpandLess sx={{ mr: 2 }} /> : <ExpandMore sx={{ mr: 2 }} />}
@@ -79,7 +79,7 @@ export default function NavigationDrawer({
 
             <Collapse in={selectedSites === site.name} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                {site.departments.map((dep, depIndex) => (
+                {site.departments.map((dep) => (
                   <React.Fragment key={dep.id}>
                     <ListItemButton
                       sx={{ pl: 6 }}
@@ -92,7 +92,7 @@ export default function NavigationDrawer({
 
                     <Collapse in={selectedDepartments === dep.name} timeout="auto" unmountOnExit>
                       <List component="div" disablePadding>
-                        {dep.machines.map((machine, machineIndex) => (
+                        {dep.machines.map((machine) => (
                           <React.Fragment key={machine.id}>
                             <ListItemButton sx={{ pl: 12 }}>
                               <ListItemText
